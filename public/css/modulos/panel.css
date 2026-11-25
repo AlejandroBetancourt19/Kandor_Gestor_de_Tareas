@@ -1,0 +1,1349 @@
+/*Fuente*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/*Variables*/
+:root {
+    /* Fondos */
+    --bg-primary: #061A2E;
+    --bg-secondary: #0B2540;
+    --sidebar: #0A1F35; 
+
+    /* Componentes */
+    --card: #102D47;
+    --border: #23415D;
+
+    /* Principal */
+    --primary: #1683F5;
+    --primary-hover: #3B9BFF;
+
+    /* Texto */
+    --text-primary: #F5F7FA;
+    --text-secondary: #A9B8C8;
+
+    /* Estados */
+    --pending: #1683F5;
+    --progress: #F5B82E;
+    --completed: #20C997;
+    --danger: #EF5350;
+
+    /* Categorías */
+    --design: #8B5CF6;
+    --backend: #F59E0B;
+    --documentation: #6366F1;
+    --database: #14B8A6;
+    --devops: #F97316;
+}
+
+html, body {
+    overflow: hidden;
+    height: 100vh;
+    margin: 0;
+}
+
+
+
+/*===================================
+        CONTENEDOR GENERAL
+===================================*/
+.contenedor-general {
+    display: flex;
+    width: 100%;
+    height: 88vh;
+    overflow: hidden;
+}
+
+
+/*===================================
+              HEADER
+===================================*/
+header {
+    padding: 8px 15px;
+    background-color: #0A223D;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 12vh;
+    box-sizing: border-box;
+}
+
+/*Contenido de la derecha del header*/
+header .cont-header, .cont-header-derecho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+/*Buscador*/
+.cont-header-derecho .buscador {
+    position: relative;
+}
+
+/*Input*/
+.cont-header-derecho .buscador input{
+    width: 100%;
+    min-width: 300px;
+    border: none;
+    background-color: #17314F;
+    padding: 8px 0 8px 45px;
+    border-radius: 10px;
+    outline: none;
+
+    font-size: 14px;
+    color: #A9B8C8;
+    font-weight: 600;
+}
+
+.buscador form #buscar:focus {
+    border-color: #23415D;
+    box-shadow: 0 0 5px rgba(89, 90, 239, 0.6);
+}
+
+/*Icono de la lupa*/
+.cont-header-derecho .buscador img {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/*iconos modo oscuro y claro*/
+.cont-header-derecho .modo-oscuro-claro img:hover, .cuenta img:hover {
+    transform: scale(1.1);
+}
+
+
+/*===================================
+             SIDEBAR
+===================================*/
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 280px;
+    height: 88vh;
+    position: sticky;
+    flex-shrink: 0;
+    top: 0;
+    padding: 15px 10px;
+    background-color: #0A223D;
+    border-top: 1px solid #182d41;
+    border-right: 1px solid #182d41;
+    box-sizing: border-box;
+}
+
+/*contenido superior*/
+.sidebar .contenido-superior {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/*contenedor de la cuenta*/
+.contenido-superior .cuenta.cuenta-sidebar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/*foto de la cuenta*/
+.cuenta.cuenta-sidebar .foto-cuenta img {
+    border-radius: 50px;
+}
+
+/*nombre de usuario*/
+.cuenta.cuenta-sidebar p {
+    font-size: 15px;
+    color: #A9B8C8;
+    font-weight: 600;
+}
+
+
+/*Botones de los módulos*/
+.contenido-superior .modulos ul li {
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+    gap: 10px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.contenido-superior .modulos li:hover{
+    background-color: #3B9BFF;
+}
+
+
+.contenido-superior .modulos ul .btn-activo {
+    background-color: #1683F5;
+}
+
+/*texto p*/
+.contenido-superior .modulos ul li p {
+    font-size: 15px;
+    font-weight: 600;
+    color: #A9B8C8;
+    pointer-events: none;
+}
+
+
+
+/*contenido inferior (cerrar sesión)*/
+.contenido-inferior{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contenido-inferior button{
+    background: transparent;
+    font-size: 15px;
+    color: #A9B8C8;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+
+
+
+/*===================================
+             MAIN
+===================================*/
+main {
+    flex-grow: 1;
+    height: 88vh;
+    overflow: hidden;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/*Header de los módulos*/
+.seccion .header-panel {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+    margin-bottom: 10px;
+}
+
+/*texto h2 de header*/
+.text-saludo h2 {
+    font-size: 28px;
+    color: #A9B8C8;
+    margin: 0 0 4px 0;
+}
+
+/*texto p del header*/
+.text-saludo p {
+    font-size: 14px;
+    color: #A9B8C8;
+    font-weight: 600;
+    margin: 0;
+}
+
+/*boton de agregar tarea*/
+.btn-nueva-tarea button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 10px;
+    background-color: #1683F5;
+
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-nueva-tarea button:hover {
+    background-color: #3B9BFF;
+}
+
+
+
+
+/*===================================
+          SECCION INICIO
+===================================*/
+/*ocultar las secciones*/
+main .seccion {
+    display: none;
+}
+
+/*mostrar solo la seccion activa*/
+main .seccion.activa {
+    display: block;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/*animacion de entrada de la seccion*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/*===================================
+    CONT DE LAS CARDS DE INICIO
+===================================*/
+.cont-cards-inicio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 5px 0 0 0;
+    width: 100%;
+    height: calc(88vh - 85px);
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+/*cards de los estados*/
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-height: calc(88vh - 105px);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/*COLORES DE CARDS*/
+/*pendiente*/
+.card.pendiente {
+    background-color: rgba(22, 131, 245, 0.5);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(22, 131, 245, 1);
+}
+
+/*en proceso*/
+.card.proceso {
+    background-color: rgba(245, 184, 46, 0.5);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(245, 184, 46, 1);
+}
+
+/*completado*/
+.card.completada {
+    background-color: rgba(32, 201, 151, 0.5);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(32, 201, 151, 1);
+}
+
+/*HEADER DE LA CARD*/
+.card .header-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/*COLOR DEL HEADER SEGÚN LA CARD*/
+/*pendiente*/
+.card .header-card.pendiente {
+    background-color: var(--pending);
+}
+
+/*en proceso*/
+.card .header-card.proceso {
+    background-color: var(--progress);
+}
+
+/*completado*/
+.card .header-card.completada {
+    background-color: var(--completed);
+}
+
+
+/*titulo de la card*/
+.card .header-card .estado p {
+    font-size: 15px;
+    color: var(--text-primary);
+    font-weight: 600;
+    padding-left: 15px;
+    margin: 0;
+}
+
+/*cantidad*/
+.card .header-card .cantidad {
+    display: flex;
+    justify-content: center;
+    padding: 8px 16px;
+    border-radius: 50px;
+}
+
+/*colores del cont de la cantidad segun la card*/
+/*pendiente*/
+.card .header-card .cantidad.pendiente {
+    background-color: var(--primary-hover);
+}
+
+/*proceso*/
+.card .header-card .cantidad.proceso {
+    background-color: #f3d389;
+}
+
+/*completado*/
+.card .header-card .cantidad.completada {
+    background-color: #6fc5ab;
+}
+
+.card .header-card .cantidad p {
+    font-size: 15px;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin: 0;
+}
+
+
+/*CONTENEDOR DE LAS TAREAS*/
+.card .cont-tarea {
+    width: 100%;
+    flex-grow: 1;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 5px 0;
+}
+
+/*TAREA*/
+.card .tarea {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 6px 10px;
+
+    background-color: var(--bg-primary);
+    border-radius: 10px;
+    padding: 8px 10px;
+
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.5);
+}
+
+/*info de la tarea*/
+.tarea .info-tarea {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 90%;
+}
+
+/*titulo de la tarea*/
+.tarea .info-tarea .titulo-tarea {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/*categoria*/
+.tarea .info-tarea .categoria-tarea {
+    display: flex;
+    justify-content: center;
+    padding: 3px 8px;
+    width: fit-content;
+    border-radius: 20px;
+    background-color: var(--database);
+    color: var(--text-primary);
+    font-size: 13px;
+    margin: 0;
+}
+
+/*fecha*/
+.tarea .fecha-tarea {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    margin: 0;
+}
+
+/*fecha card pendiente*/
+.fecha-tarea.pendiente {
+    color: var(--text-secondary);
+}
+
+/*fecha card en proceso*/
+.fecha-tarea.proceso {
+    color: var(--progress);
+}
+
+/*fecha card completado*/
+.fecha-tarea.completada {
+    color: var(--completed);
+}
+
+
+/*BOTON INFERIOR DE LA CARD*/
+.card .nueva-tarea-btn.inferior {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    background-color: transparent;
+    border: none;
+    margin: 8px 10px;
+    gap: 5px;
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+/*color del boton segun la card*/
+/*pendiente*/
+.card .nueva-tarea-btn.inferior.pendiente {
+    color: var(--text-secondary);
+}
+
+/*en proceso*/
+.card .nueva-tarea-btn.inferior.proceso {
+    color: var(--progress);
+}
+
+/*completado*/
+.card .nueva-tarea-btn.inferior.completada {
+    color: var(--completed);
+}
+
+
+
+
+
+
+
+
+
+/*===================================
+           SECCIÓN TAREAS
+===================================*/
+/*CONTENEDOR DE LA SECCION*/
+.cont-mis-tareas {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+/*botones de los filtros*/
+.cont-mis-tareas .filtros-tareas {
+    display: flex;
+    justify-content: left;
+    gap: 15px;
+}
+
+.filtros-tareas button {
+    padding: 6px 24px;
+    text-align: center;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.filtros-tareas button:hover {
+    background-color: var(--primary-hover);
+    color: var(--text-primary);
+}
+
+/*boton activo*/
+.filtros-tareas .btn-filtro.activo {
+    background-color: var(--primary);
+    color: var(--text-primary);
+}
+
+
+/*tabla de las tareas*/
+.cont-mis-tareas .cont-tabla-tareas {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(88vh - 160px);
+    margin-top: 15px;
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+
+    overflow-y: auto;
+    position: relative;
+    scrollbar-width: none;
+}
+
+/*tabla de las tareas*/
+.cont-mis-tareas table{
+    border: none;
+}
+
+/*fila del head de la tabla*/
+/*quitar bordes*/
+.cont-mis-tareas table {
+    border-collapse: collapse;
+}
+
+/*borde inferior para todas las filas*/
+.cont-mis-tareas table thead th, td {
+    border-bottom: 2px solid var(--bg-primary);
+}
+
+.cont-mis-tareas table thead {
+    color: var(--text-secondary);
+}
+
+.cont-mis-tareas table th {
+    text-align: left;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-secondary);
+}
+
+/*filas del body de la tabla*/
+.cont-mis-tareas table td {
+    padding: 10px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/*color de la categoria*/
+.cont-mis-tareas table td .tabla-categoria {
+    padding: 5px 20px;
+    border-radius: 20px;
+    color: var(--text-primary);
+    font-size: 14px;
+    width: fit-content;
+}
+
+/*Color del estado*/
+.cont-mis-tareas table td .estado {
+    padding: 5px 20px;
+    border-radius: 20px;
+    color: var(--text-primary);
+    font-size: 14px;
+    width: fit-content;
+}
+
+
+
+
+
+
+
+
+/*===================================
+         SECCIÓN CATEGORÍAS
+===================================*/
+/*contenedor del modulo de categorias*/
+.cont-categorias {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/*Tabla de categorias*/
+.cont-categorias .cont-tabla-categorias {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(88vh - 160px);
+    margin-top: 15px;
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+
+    overflow-y: auto;
+    position: relative;
+    scrollbar-width: none;
+}
+
+/*fila del head de la tabla categorias*/
+/*quitar bordes*/
+.cont-tabla-categorias table {
+    border-collapse: collapse;
+}
+
+/*borde inferior para todas las filas*/
+.cont-tabla-categorias table thead th, td {
+    border-bottom: 2px solid var(--bg-primary);
+}
+
+.cont-tabla-categorias table thead {
+    color: var(--text-secondary);
+}
+
+.cont-tabla-categorias table th {
+    text-align: left;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-secondary);
+}
+
+/*filas del body de la tabla*/
+.cont-tabla-categorias table td {
+    padding: 10px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/*color de la categoria*/
+.cont-tabla-categorias table td .color-categ {
+    padding: 8px;
+    border-radius: 50px;
+    width: fit-content;
+    background-color: var(--pending);
+}
+
+
+
+
+
+
+
+/* ===================================
+   MODO CLARO (Solo Menú y Secciones)
+   =================================== */
+
+/* Menú Lateral en modo claro */
+body.light-mode .sidebar {
+    background-color: #F8FAFC;
+    border-right: 1px solid #E2E8F0;
+    border-top: 1px solid #E2E8F0;
+}
+
+body.light-mode .sidebar .cuenta.cuenta-sidebar p,
+body.light-mode .sidebar .modulos ul li p,
+body.light-mode .sidebar .contenido-inferior p,
+body.light-mode .sidebar .contenido-inferior a {
+    color: #334155;
+}
+
+body.light-mode .sidebar .modulos ul li:hover {
+    background-color: #E2E8F0;
+}
+
+body.light-mode .sidebar .modulos ul .btn-activo {
+    background-color: #1683F5;
+}
+
+body.light-mode .sidebar .modulos ul .btn-activo p {
+    color: #FFFFFF;
+}
+
+/* Fondo de las Secciones / Main (tono suave, no blanco puro) */
+body.light-mode main {
+    background-color: #F4F6F9;
+}
+
+body.light-mode .text-saludo h2,
+body.light-mode .text-saludo p {
+    color: #1E293B;
+}
+
+/* Tablas y contenedores internos de las secciones en modo claro */
+body.light-mode .cont-mis-tareas .cont-tabla-tareas,
+body.light-mode .cont-categorias .cont-tabla-categorias {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+}
+
+body.light-mode .cont-mis-tareas table th,
+body.light-mode .cont-tabla-tareas table td,
+body.light-mode .cont-tabla-categorias table th,
+body.light-mode .cont-tabla-categorias table td {
+    color: #334155;
+    border-bottom-color: #E2E8F0;
+}
+
+body.light-mode .cont-mis-tareas table th,
+body.light-mode .cont-tabla-categorias table th {
+    background-color: #F8FAFC;
+}
+
+body.light-mode .filtros-tareas button {
+    background-color: #E2E8F0;
+    color: #475569;
+}
+
+body.light-mode .filtros-tareas button:hover {
+    background-color: #CBD5E1;
+    color: #1E293B;
+}
+
+body.light-mode .filtros-tareas .btn-filtro.activo {
+    background-color: #1683F5;
+    color: #FFFFFF;
+}
+
+
+
+
+
+
+
+
+
+/*===================================
+          MODALES GENERALES
+===================================*/
+.cont-modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro transparente */
+    backdrop-filter: blur(4px); /* Suave desenfoque de fondo */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Por encima de todo */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal de Agregar y editar Tarea */
+.cont-modal .modal-agg-tarea, .modal-editar-tarea {
+    background-color: var(--bg-secondary);
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border);
+}
+
+
+
+
+/* Modal de Agregar Categoría */
+.cont-modal .modal-agg-categoria, .modal-editar-categoria {
+    background-color: var(--bg-secondary);
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border);
+}
+
+/* CONTENEDOR DEL FORMULARIO DE TAREA Y CATEGORÍA */
+.modal-agg-tarea .cont-form-tarea, .modal-editar-tarea .cont-form-tarea,
+.modal-agg-categoria .cont-form-categoria {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-agg-categoria, .modal-editar-categoria h2 {
+    font-size: 24px;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Titulo del modal */
+.cont-form-tarea .titulo-modal h2 {
+    font-size: 24px;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* FORMULARIOS DE MODALES */
+.cont-form-modal form,
+.cont-form-categoria form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos de los label */
+.cont-form-modal form label,
+.cont-form-categoria form label {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    margin: 10px 0 4px 0;
+}
+
+/* Inputs del form */
+.cont-form-modal form #titulo, 
+.cont-form-modal form #descripcion,
+.cont-form-categoria form #nombre, 
+.cont-form-modal form #titulo-editar,
+.cont-form-modal form #descripcion-editar,
+.cont-form-categoria form #nombre-editar {
+    width: 100%;
+    height: 38px;
+    border-radius: 10px;
+    border: 2px solid rgba(89, 90, 239, 0.15);
+    outline: none;
+    padding: 0 15px;
+    background-color: var(--bg-primary);
+    color: white;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.cont-form-modal form #descripcion,
+.cont-form-modal form #descripcion-editar {
+    height: 75px;
+    resize: none;
+    padding: 8px 15px;
+}
+
+.cont-form-modal form input:focus,
+.cont-form-categoria form input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 5px rgba(22, 131, 245, 0.6);
+}
+
+/* Categoría, estado y fecha en línea */
+.categoria-estado-fecha {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.categoria-estado-fecha .select-categoria,
+.categoria-estado-fecha .select-estado,
+.categoria-estado-fecha .fecha-limite {
+    flex: 1;
+}
+
+.categoria-estado-fecha .select-categoria select,
+.select-estado select, 
+.fecha-limite input {
+    width: 100%;
+    height: 38px;
+    border-radius: 10px;
+    border: 2px solid rgba(89, 90, 239, 0.15);
+    outline: none;
+    padding: 0 10px;
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+/* Selector de colores personalizados */
+.form-group {
+    margin-top: 15px;
+}
+
+/* Cuadrícula de colores de 6 columnas */
+.color-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  max-width: 100%;
+}
+
+.form-group .color-picker {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.color-option {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.color-option:hover {
+  transform: scale(1.1);
+}
+
+/* Ocultar el radio button real pero mantener su funcionalidad */
+.color-option input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* Estilo cuando el color está seleccionado (genera el borde exterior exacto al de tu imagen) */
+.color-option input[type="radio"]:checked + span,
+.color-option:has(input[type="radio"]:checked) {
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #2563eb;
+}
+
+
+/* BOTONES DE ACCIÓN (BORRAR CANCELAR Y CREAR) */
+.botones-modal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*botón eliminar*/
+.botones-modal .btn-eliminar-tarea, .btn-eliminar .btn-eliminar-categoria {
+    padding: 8px 16px;
+    margin-top: 15px;
+    border: 1px solid var(--danger);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--danger);
+    background-color: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.cancelar-crear {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.cancelar-crear button {
+    padding: 8px 16px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Botón de cancelar */
+.cancelar-crear .btn-cancelar {
+    border: 1px solid var(--primary);
+    background-color: transparent;
+}
+
+.cancelar-crear .btn-cancelar:hover {
+    background-color: rgba(22, 131, 245, 0.1);
+}
+
+/* Botón de crear */
+.cancelar-crear .btn-crear {
+    background-color: var(--primary);
+}
+
+.cancelar-crear .btn-crear:hover {
+    background-color: var(--primary-hover);
+}
+
+
+
+
+
+/* ESTILOS DE LA BURBUJA DE ALERTAS FLOTANTE */
+.toast-notification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #ffffff;
+  color: #0f172a;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-left: 4px solid #10b981; /* Por defecto verde */
+  z-index: 1000;
+  
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+/* Tipos de alertas según su clase */
+.toast-notification.success {
+  border-left-color: #10b981; /* Verde */
+}
+
+.toast-notification.error {
+  border-left-color: #ef4444; /* Rojo */
+}
+
+.toast-notification.warning {
+  border-left-color: #f59e0b; /* Amarillo / Naranja */
+}
+
+/* Clase para mostrarla */
+.toast-notification.mostrar {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.toast-icon {
+  font-size: 20px;
+}
+
+.toast-content strong {
+  font-size: 14px;
+  display: block;
+  color: #0f172a;
+}
+
+.toast-content p {
+  margin: 0;
+  font-size: 13px;
+  color: #64748b;
+}
+
+
+
+/* ===================================
+   ADAPTACIÓN RESPONSIVE MÓVIL 768px
+   =================================== */
+.btn-menu-movil {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: auto;
+    }
+
+    /* Header fijo y por encima de todo */
+    header {
+        height: auto;
+        padding: 8px 10px;
+        position: relative;
+        z-index: 100000;
+    }
+
+    header .cont-header {
+        gap: 8px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Contenedor izquierdo (botón + logo) adaptado para 360px */
+    header .cont-header > div:first-child {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+    }
+
+    header .cont-header img[alt="Logo"] {
+        width: 115px !important;
+        max-width: none;
+    }
+
+
+    /* Forzar que el botón hamburguesa se muestre siempre y no se comprima */
+    .btn-menu-movil {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: none;
+        padding: 2px;
+        color: #F5F7FA;
+        flex-shrink: 0;
+    }
+
+    .cont-header-derecho {
+        gap: 8px;
+    }
+
+    .cont-header-derecho .buscador input {
+        min-width: 105px;
+        width: 105px;
+        font-size: 11px;
+        padding: 6px 4px 6px 28px;
+    }
+
+    .cont-header-derecho img, 
+    .cuenta img {
+        width: 28px !important;
+    }
+
+    /* Contenedor general en móvil */
+    .contenedor-general {
+        flex-direction: column;
+        height: auto;
+        min-height: auto;
+        overflow: visible;
+        position: relative;
+    }
+
+    /* Sidebar / Menú lateral flotante con z-index superior */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 260px;
+        height: 100vh;
+        z-index: 99999 !important;
+        transition: left 0.3s ease-in-out;
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.8);
+        padding: 75px 15px 20px 15px;
+        background-color: #0A223D;
+    }
+
+    .sidebar.activo {
+        left: 0;
+    }
+
+    /* Main en móvil */
+    main {
+        height: auto;
+        min-height: auto;
+        overflow: visible;
+        padding: 12px;
+        width: 100%;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Sección inicio / cards en móvil */
+    .cont-cards-inicio {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        gap: 15px;
+        padding: 10px 0;
+    }
+
+    .card {
+        max-height: none;
+        height: auto;
+    }
+
+    .card .cont-tarea {
+        max-height: 280px;
+    }
+
+    /* Header de los módulos en móvil */
+    .seccion .header-panel {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .text-saludo h2 {
+        font-size: 24px;
+    }
+
+    .text-saludo p {
+        font-size: 13px;
+    }
+
+    .btn-nueva-tarea {
+        width: 100%;
+    }
+
+    .btn-nueva-tarea button {
+        width: 100%;
+        justify-content: center;
+        padding: 12px;
+    }
+
+    /* Tablas en móvil */
+    .cont-mis-tareas .cont-tabla-tareas,
+    .cont-categorias .cont-tabla-categorias {
+        height: auto;
+        max-height: 55vh;
+    }
+
+    .cont-mis-tareas .filtros-tareas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .filtros-tareas button {
+        padding: 8px 6px;
+        font-size: 11px;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Modales adaptados a móvil */
+    .cont-modal .modal-agg-tarea, 
+    .cont-modal .modal-editar-tarea,
+    .cont-modal .modal-agg-categoria, 
+    .cont-modal .modal-editar-categoria {
+        width: 95%;
+        padding: 15px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .categoria-estado-fecha {
+        flex-direction: column;
+        gap: 12px;
+        margin: 10px 0;
+    }
+
+    .color-picker-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 6px;
+    }
+
+    .color-option {
+        width: 32px;
+        height: 32px;
+    }
+
+    .botones-modal {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .botones-modal .btn-eliminar {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .botones-modal .btn-eliminar button,
+    .cancelar-crear {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .cancelar-crear button {
+        flex: 1;
+        padding: 12px;
+        text-align: center;
+    }
+
+    /* Toast alerta flotante en móvil */
+    .toast-notification {
+        left: 10px;
+        right: 10px;
+        bottom: 15px;
+        padding: 12px;
+        z-index: 100000;
+    }
+}
